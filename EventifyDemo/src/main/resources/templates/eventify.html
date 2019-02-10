@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Eventify</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- include css in the header -->
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>
+</head>
+<body>
+	
+	<div class="heading"><h1> EVENTIFY</h1></div> 
+  <div > <form action="/query" style="float: right;">
+  <input type="text" name="query" placeholder="search for Events,Interest or Organizer" style="font-size: 18pt; height: 30px; width:450px;">
+  <input type="submit" value="search">
+</form> </div>
+
+<div class="heading"><a href="/events" >CREATE EVENT </a></div>
+<div class="heading"><a href="/citysearch" >CHANGE CITY </a></div>
+
+<h3 style="text-align:center">Upcoming Events in your City</h3>
+<ul>
+  <li><a class="active" href="/{city}">ALL</a></li>
+  <li><a href="/{city}/educnlrng">EDCATIONAL & LEARNING</a></li>
+  <li><a href="/{city}/sportsnfitness">SPORTS & FITNESS</a></li>
+  <li><a href="/{city}/tech">TECH</a></li>
+  <li><a href="/{city}/trvladv">TRAVEL & ADVENTURE</a></li>
+  <li><a href="/{city}/biznntwk">BIZ & NETWORKING</a></li>
+  <li><a href="/{city}/entertainment">ENTERTAINMENT</a></li>
+  <li><a href="/{city}/others">OTHERS</a></li>
+</ul>
+
+<h3 style="text-align:center">Events in Popular Cities</h3>
+
+<div class="box">
+ <a href="/hyderabad">
+<img border="0" alt="hyderabad" th:src="@{/img/hyderabad.jpg}" width="100" height="100">
+</a>
+<span>Hyderabad</span>
+</div>
+
+<div class="box">
+ <a href="/delhi">
+<img border="0" alt="delhi" th:src="@{/img/delhi.jpg}" width="100" height="100">
+</a>
+<span>Delhi</span>
+</div>
+
+<div class="box">
+ <a href="/mumbai">
+<img border="0" alt="mumbai" th:src="@{/img/mumbai.jpg}" width="100" height="100">
+</a>
+<span>Mumbai</span>
+</div>
+
+<div class="box">
+ <a href="/banglore">
+<img border="0" alt="banglore" th:src="@{/img/banglore.jpg}" width="100" height="100">
+</a>
+<span>Banglore</span>
+</div>
+
+<div class="box">
+ <a href="/kolkata">
+<img border="0" alt="kolkata" th:src="@{/img/kolkata.jpg}" width="100" height="100">
+</a>
+<span>Kolkata</span>
+</div>
+
+<div class="box">
+ <a href="/chennai">
+<img border="0" alt="chennai" th:src="@{/img/chennai.jpg}" width="100" height="100">
+</a>
+<span>Chennai</span>
+</div>
+	
+	
+<div class="box">
+ <a href="/pune">
+<img border="0" alt="pune" th:src="@{/img/pune.jpg}" width="100" height="100">
+</a>
+<span>Pune</span>
+</div>
+
+<div class="box">
+ <a href="lucknow">
+<img border="0" alt="lucknow" th:src="@{/img/lucknow.jpg}" width="100" height="100">
+</a>
+<span>Lucknow</span>
+</div>
+
+<div class="box">
+ <a href="/visakhapatnam">
+<img border="0" alt="visakhapatnam" th:src="@{/img/visakhapatnam.jpg}" width="100" height="100">
+</a>
+<span>Visakhapatnam</span>
+</div>
+
+<div class="box">
+ <a href="/bhopal">
+<img border="0" alt="bhopal" th:src="@{/img/bhopal.jpg}" width="100" height="100">
+</a>
+<span>Bhopal</span>
+</div>
+
+
+
+	 <!-- include javascript in the footer -->
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/lib.js}"></script>
+	
+</body>
+<footer>@Copyright eventify.com 2019</footer>
+</html>

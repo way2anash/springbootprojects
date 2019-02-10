@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Eventify</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- include css in the header -->
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>
+</head>
+<body>
+	
+	
+<div class="box" >  
+          <img th:src="@{${event.imageUrl}}" alt="Event image"/><br/>      
+       
+           <p><b>Fees:-</b><span th:text="${event.fees}">Fees</span></p>
+           
+          <h1>Overview</h1> 
+          <p><span th:text="${event.overview}"> Overview </span></p>
+             
+             <p><b>Oranizer:- </b><span th:text="${event.organizerName}"> Organizer </span></p>
+   
+            <p><b>Date:- </b><span th:text="${event.date}"> Date </span></p>
+
+            <p><b>Venue:- </b><span th:text="${event.venue}"> Venue </span></p>
+            
+            <p><b>Time:- </b><span th:text="${event.time}"> Time </span></p>
+            
+           <p><b>Contact Number:- </b><span th:text="${event.contactNumber}"> Contact </span></p> 
+           
+           <p><b>Email:- </b><span th:text="${event.email}"> Email </span></p>
+           
+            <p><b>Tags:-  #</b><span th:text="${event.tags}"> Tags </span></p>
+        
+       </div>
+
+ 	
+	 <!-- include javascript in the footer -->
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/lib.js}"></script>
+	
+</body>
+<footer>@Copyright eventify.com 2019</footer>
+</html>

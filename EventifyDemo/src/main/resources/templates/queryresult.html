@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Eventify</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- include css in the header -->
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>
+</head>
+<body>
+	
+	<div class="heading"><h1> EVENTIFY</h1></div> 
+  <div > <form action="/query" style="float: right;">
+  <input type="text" name="query" placeholder="search for Events,Interest or Organizer" style="font-size: 18pt; height: 30px; width:450px;">
+  <input type="submit" value="search">
+</form> </div>
+
+
+<div th:if="${events.empty}">
+<div>Opps! No Information Found!</div>
+</div>
+
+ <div class="box" th:each="event : ${events}">  
+          <img th:src="@{${event.imageUrl}}" alt="Event image" width="128" height="128"/>      
+         <b>   <span th:text="${event.eventName}"> Event Name </span> </b>
+            <span th:text="${event.organizerName}"> Organizer </span>
+            <span th:text="${event.date}"> Date </span>
+            <span th:text="${event.time}"> Time </span>
+            <a th:href="@{/events/{id}(id=${event.id})}">View Details</a> 
+       </div>
+       
+
+ 	
+	 <!-- include javascript in the footer -->
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/lib.js}"></script>
+	
+</body>
+<footer>@Copyright eventify.com 2019</footer>
+</html>

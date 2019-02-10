@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Eventify</h1>
+	<table>
+    <thead>
+        <tr>
+            <th> Event Name </th>
+            <th> Organizer </th>
+            <th>  Venue </th>
+            <th>  type </th>
+            <th>  tags </th>
+            <th> Date </th>
+            <th> Time </th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${events.empty}">
+            <td colspan="2"> No Events Available </td>
+        </tr>
+        <tr th:each="event : ${events}">
+            <td><span th:text="${event.eventName}"> Event Name </span></td>
+            <td><span th:text="${event.organizerName}"> Organizer </span></td>
+            <td><span th:text="${event.venue}">Venue </span></td>
+            <td><span th:text="${event.type}"> Type </span></td>
+            <td><span th:text="${event.tags}"> Tags </span></td>
+            <td><span th:text="${event.date}"> Date </span></td>
+            <td><span th:text="${event.time}"> Time </span></td>
+        </tr>
+    </tbody>
+</table>
+    
+</body>
+</html>
