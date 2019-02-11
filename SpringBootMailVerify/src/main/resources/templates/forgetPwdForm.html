@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+
+<div>
+<h1>Welcome to the Nepdroid Technologies.</h1>
+<p>Enter your recovery email.</p>
+         
+         <div th:if="${errorMessage}" 
+                   th:text="${errorMessage}"></div>
+                   
+		  <form  action="/forgetPassword"  method="post">
+			<table>
+				<tr><td>Email:</td><td><input type="text" name="email" /></td></tr>
+				
+				
+				<tr><td></td><td><input type="submit" value="Submit" /></td></tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
