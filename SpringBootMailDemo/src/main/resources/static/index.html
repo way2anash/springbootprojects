@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+
+<div>
+<h1>Welcome to the Nepdroid Technologies mail Service.</h1>
+
+		  <form  action="/sendEmail"  method="post">
+			<table>
+				<tr><td>Enter Sender mail:</td><td><input type="text" name="from" /></td></tr>
+				
+				<tr><td>Enter Subject of mail:</td><td><input type="text" name="subject" /></td></tr>
+				
+				<tr><td>Enter Body of mail:</td><td><input type="text" name="text" /></td></tr>
+				
+				<tr><td>Enter Receiver mail:</td><td><input type="text" name="to" /></td></tr>
+				<tr><td></td><td><input type="submit" value="Send" /></td></tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
