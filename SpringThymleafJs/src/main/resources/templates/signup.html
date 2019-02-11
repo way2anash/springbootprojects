@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript"  src="js/jquery.js"></script>
+<script type="text/javascript"  src="js/script.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+	<div class="workarea">
+
+<h1>Create an Account</h1>
+
+<form id=registration_form th:action="@{/signup}" th:object="${signup}" method="post">
+<table>
+<tr><td>Chose Username: </td><td><input type="text" class="form_text" id="form_username" name="username"></td><td><span class="error_form" id="username_error_message"></span></td></tr>
+<tr><td>Password: </td><td><input type="password" class="form_text" id="form_password" name="password"></td><td><span class="error_form" id="password_error_message"></span></td></tr>
+<tr><td>Retype Password: </td><td><input type="password" class="form_text" id="form_retype_password" name="cnfpassword"></td><td><span class="error_form" id="retype_password_error_message"></span></td></tr>
+<tr><td>Email: </td><td><input type="text" class="form_text" id="form_email" name="email"></td><td><span class="error_form" id="email_error_message"></span></td></tr>
+<tr><td></td><td><input type="submit" class="sbmt_btn" value="Create Account"></td><td></td></tr>
+</table>
+</form>
+
+</div>
+   
+</body>
+</html>
