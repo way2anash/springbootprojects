@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: SpringBootMongoDb
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: anash
+Implementation-Vendor-Id: com.mongo
+Build-Jdk: 1.8.0_201
+Implementation-URL: http://projects.spring.io/spring-boot/SpringBootMo
+ ngoDb/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

@@ -1,0 +1,53 @@
+/*
+package com.mongo;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+
+@Configuration
+@EnableWebSecurity
+
+
+public class SPWebSecConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    @Bean
+    protected UserDetailsService userDetailsService() {
+        return new SPUserDetailsService();
+    }
+
+    @Bean
+    public static NoOpPasswordEncoder passwordEncoder() {
+     return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
+    }
+    
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+    	http
+        .authorizeRequests()
+            .antMatchers( "/home").permitAll()
+            .antMatchers("/hellosp").access("hasRole('SP')")
+          // .antMatchers("/hellouser").access("hasRole('ADMIN')")
+          //  .anyRequest().authenticated()
+            .and()
+        .formLogin()
+     //   . loginProcessingUrl ( "/userlogin")
+            .loginPage("/login2")
+            .permitAll()
+            .and()
+        .logout()
+          //  .permitAll()
+        .logoutUrl("/logout"). 
+		logoutSuccessUrl("/home")
+            .and()
+                .userDetailsService(userDetailsService());
+    }
+
+}                           */
+                                    

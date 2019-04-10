@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>SP workspace!</title>
+    </head>
+    <body>
+        <h1>Welcome to the Service Provider workspace!!!</h1>
+        
+         <footer>
+        <div class="container">
+            <p>
+                &copy; Nepdroid.com
+                <span sec:authorize="isAuthenticated()" style="display: inline-block;">
+                    | Logged user: <span sec:authentication="name"></span> |
+                    Roles: <span sec:authentication="principal.authorities"></span> |
+                    
+                </span>
+            </p>
+        </div>
+        
+         <form th:action="@{/logout}" method="POST">
+         <input type="submit" value="Logout"/>
+    </form>
+    
+    </footer>
+       
+    </body>
+
+</html>
