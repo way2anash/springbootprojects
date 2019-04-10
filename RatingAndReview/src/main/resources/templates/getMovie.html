@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search Movie</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Search Movie</h1>
+
+<div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}"> </div>
+<form action="#" th:action="@{/getMovie}"  method="post">
+    <p>
+        Movie Name: <input type="text" name="name">
+    </p>
+   
+    <p>
+        <input type="submit" value="Submit"/> <input type="reset" value="Reset">
+    </p>
+</form>
+
+</body>
+</html>

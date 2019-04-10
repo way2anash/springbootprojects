@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Show movie</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<h1>Result</h1>
+
+<div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}"></div>
+
+<h2 style="text-align:center; color:SaddleBrown ">Movie Details</h2>
+<div class="card">
+  <h1 th:text="'Name: ' + ${movie.name}" ></h1>
+  
+  <p th:text="'Rating: ' + ${movie.rating} + ' Out of 5' "></p>
+  <p th:text="'Genre: ' + ${movie.genre}"></p>
+<p th:text="'Released Year: ' + ${movie.releasedYear}"></p>
+</div>
+
+  
+<h3 style="text-align:center; color:SaddleBrown ">Submit Your Review</h3>
+<div class="card" >
+<form action="#" th:action="@{/addReview}"  method="post" >
+   <p>
+    <input type="hidden" id="custId" name="name"  th:value="${movie.name}">
+    </p>
+    <p>
+        Email: <input type="text" name="email">
+    </p>
+    <p>
+        Review: <input type="text" name="review">
+    </p>
+    <p>
+        Rating Value: <input type="text" name="ratingValue">
+    </p>
+ 
+    
+    <p>
+        <input type="submit" value="Submit"/> <input type="reset" value="Reset">
+    </p>
+</form>
+</div>
+
+
+<div th:if="${reviews != null}">
+<h3 style="text-align:center; color:SaddleBrown ">Users Review</h3>
+<div class="card" th:each="review1: ${reviews}">
+  
+  <h1 th:text=" ${review1.review}" ></h1>
+  <p th:text="'Rating: ' + ${review1.ratingValue}"></p>
+<p th:text="'By: ' + ${review1.email}"></p>
+<p th:text="'On: ' + ${review1.createdDate}"></p>
+</div>
+</div>
+
+</body>
+</html>
