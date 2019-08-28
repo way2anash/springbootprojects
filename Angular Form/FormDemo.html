@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+<body>
+
+<h2>Form Demo</h2>
+
+<form ng-app="myApp" ng-controller="validateCtrl" 
+name="myForm" novalidate>
+
+<p>Username:<br>
+<input type="text" name="user" ng-model="user" required>
+<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.user.$error.required">Username is required.</span>
+</span>
+</p>
+
+<p>Email:<br>
+<input type="email" name="email" ng-model="email" required>
+<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+<span ng-show="myForm.email.$error.required">Email is required.</span>
+<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+</span>
+</p>
+
+<p>Password:<br>
+<input class="form-control" type="password" name="newpass"  ng-model="newpass">
+</p>
+
+<p>Confirm Password:<br>
+<input class="form-control" type="password" name="confirmpass"  ng-model="confirmpass">
+<span ng-show="confirmpass != newpass"><font color="red">Password not matched.</font></span>
+</p>
+
+<p>Organization/Company:<br>
+<input type="text" name="company" ng-model="company" required>
+<span style="color:red" ng-show="myForm.company.$dirty && myForm.company.$invalid">
+<span ng-show="myForm.company.$error.required">Company name is required.</span>
+</span>
+</p>
+
+<p>House Number:<br> 
+<input type="text" name="houseNumber" ng-model="houseNumber" required>
+<span style="color:red" ng-show="myForm.houseNumber.$dirty && myForm.houseNumber.$invalid">
+<span ng-show="myForm.houseNumber.$error.required">House Number is required.</span>
+</span>
+</p>
+
+<p>Street Name:<br> 
+<input type="text" name="streetName" ng-model="streetName" required>
+<span style="color:red" ng-show="myForm.streetName.$dirty && myForm.streetName.$invalid">
+<span ng-show="myForm.streetName.$error.required">Street Name is required.</span>
+</span>
+</p>
+
+<p>City:<br> 
+<input type="text" name="city" ng-model="city" required>
+<span style="color:red" ng-show="myForm.city.$dirty && myForm.city.$invalid">
+<span ng-show="myForm.city.$error.required">City is required.</span>
+</span>
+</p>
+
+<p>Zip Code:<br> 
+<input type="text" name="zipCode" ng-model="zipCode" required>
+<span style="color:red" ng-show="myForm.zipCode.$dirty && myForm.zipCode.$invalid">
+<span ng-show="myForm.zipCode.$error.required">Zip Code is required.</span>
+</span>
+</p>
+
+ <p>Full Address:<br> 
+ <span ng-bind="houseNumber"></span>,<span ng-bind="streetName"></span>
+  <span ng-bind="city"></span>,<span ng-bind="zipCode "></span>
+</p>
+
+<div ng-app class="test" ng-init="valid=true">
+    <input type="checkbox" id="agree_checkbox" ng-model="checked" >
+    <label for="agree_checkbox">I agree terms & conditions.</label><br>
+
+    <div class="validation" ng-if="!valid"><font color="red">You have to agree first.</font></div>
+
+    <button type="submit" ng-click="valid=checked">Submit</button>
+</div>
+
+
+
+</form>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('validateCtrl', function($scope) {
+  
+});
+</script>
+
+</body>
+</html>
